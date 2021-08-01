@@ -1,0 +1,75 @@
+﻿{% load static %}
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Desenvolvimento Web</title>
+        <meta name="description" content="">
+
+        <!-- Style -->
+        <link rel="stylesheet" href="{% static 'css/production.css' %}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- Web fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
+
+        <!-- favicon.ico. Place these in the root directory. -->
+        <link rel="shortcut icon" href="favicon.ico">
+
+    </head>
+
+    <body class="has-animations">
+
+        <!-- Body -->
+        <main>
+                <!-- Header -->
+            <header class="pt2 pb1 align--center">
+                <div class="container">
+                    <div class="col-lg-8">
+                        <div class="text-container">
+                            <h3>BOLETIM ESCOLAR</h3>
+            </header>
+            <header id="header" class="header">
+                <div class="container">
+                    <div class="col-lg-8">
+                        <div class="text-container">
+                                <thead>
+                                    <tr>
+                                        <h5>ALUNOS</h5>
+                                    </tr>
+                                </thead>
+                <table class="table table-success">
+                    <tbody>
+                    {% for aluno in alunos %}
+                        <tr>
+                           <td><a href="{% url 'aluno' aluno.id %}">{{ aluno.nome }}</a></td>
+                        </tr>
+                    {% endfor%}
+                    </tbody>
+                </table>
+        </main>
+
+        <!-- Footer -->
+        <footer class="pt2 pb2">
+
+            <div class="container align--center">
+                <p>Contato</p>
+                <ul class="no-bullets list--inline mt1">
+                    <li class="mr1"><a href="https://github.com/ZeliaNFT" class="link"><img class="icon" src="{% static '/img/git.png' %}" alt="GitHub"></a></li>
+                    <li><a href="https://www.linkedin.com/in/zeliatorres/" class="link"><img class="icon" src="{% static '/img/linkedin.png' %}" alt="LinkedIn"></a></li>
+                </ul>
+                <p>&copy; Zelia Torres</p>
+            </div>
+        </footer>
+
+        <!-- Scroll reveal -->
+        <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+        <!-- The compiled JavaScript file -->
+        <script src="{% static 'js/production.js' %}"></script>
+    </body>
+
+</html>
+
